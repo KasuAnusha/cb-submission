@@ -26,6 +26,12 @@ private object AppDependencies {
   private val playConfigVersion = "2.0.1"
   private val domainVersion = "3.6.0"
   private val hmrcTestVersion = "1.6.0"
+  private val metricsPlayVersion = "0.2.1"
+  private val metricsGraphiteVersion = "3.0.2"
+  private val playJsonLogger = "2.1.1"
+  private val scalaTestVerson = "2.2.6"
+  private val pegdownVersion = "1.5.0"
+
 
   val compile = Seq(
 
@@ -36,7 +42,10 @@ private object AppDependencies {
     "uk.gov.hmrc" %% "play-url-binders" % playUrlBindersVersion,
     "uk.gov.hmrc" %% "play-config" % playConfigVersion,
     "uk.gov.hmrc" %% "play-json-logger" % playJsonLoggerVersion,
-    "uk.gov.hmrc" %% "domain" % domainVersion
+    "uk.gov.hmrc" %% "domain" % domainVersion,
+    "com.kenshoo" %% "metrics-play" % metricsPlayVersion,
+    "com.codahale.metrics" % "metrics-graphite" % metricsGraphiteVersion,
+    "uk.gov.hmrc" %% "play-json-logger" % playJsonLogger
   )
 
   trait TestDependencies {
@@ -48,8 +57,8 @@ private object AppDependencies {
     def apply() = new TestDependencies {
       override lazy val test = Seq(
         "uk.gov.hmrc" %% "hmrctest" % hmrcTestVersion % scope,
-        "org.scalatest" %% "scalatest" % "2.2.6" % scope,
-        "org.pegdown" % "pegdown" % "1.5.0" % scope,
+        "org.scalatest" %% "scalatest" % scalaTestVerson % scope,
+        "org.pegdown" % "pegdown" % pegdownVersion % scope,
         "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
       )
     }.test
@@ -62,8 +71,8 @@ private object AppDependencies {
 
       override lazy val test = Seq(
         "uk.gov.hmrc" %% "hmrctest" % hmrcTestVersion % scope,
-        "org.scalatest" %% "scalatest" % "2.2.6" % scope,
-        "org.pegdown" % "pegdown" % "1.5.0" % scope,
+        "org.scalatest" %% "scalatest" % scalaTestVerson % scope,
+        "org.pegdown" % "pegdown" % pegdownVersion % scope,
         "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
       )
     }.test
