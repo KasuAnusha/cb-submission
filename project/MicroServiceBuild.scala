@@ -31,7 +31,7 @@ private object AppDependencies {
   private val playJsonLogger = "2.1.1"
   private val scalaTestVerson = "2.2.6"
   private val pegdownVersion = "1.5.0"
-
+  private val mockitoVersion = "1.9.5"
 
   val compile = Seq(
 
@@ -59,7 +59,8 @@ private object AppDependencies {
         "uk.gov.hmrc" %% "hmrctest" % hmrcTestVersion % scope,
         "org.scalatest" %% "scalatest" % scalaTestVerson % scope,
         "org.pegdown" % "pegdown" % pegdownVersion % scope,
-        "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
+        "com.typesafe.play" %% "play-test" % PlayVersion.current % scope,
+        "org.mockito" % "mockito-all" % mockitoVersion % scope
       )
     }.test
   }
@@ -73,7 +74,8 @@ private object AppDependencies {
         "uk.gov.hmrc" %% "hmrctest" % hmrcTestVersion % scope,
         "org.scalatest" %% "scalatest" % scalaTestVerson % scope,
         "org.pegdown" % "pegdown" % pegdownVersion % scope,
-        "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
+        "com.typesafe.play" %% "play-test" % PlayVersion.current % scope,
+        "org.mockito" % "mockito-all" % mockitoVersion % scope
       )
     }.test
   }
